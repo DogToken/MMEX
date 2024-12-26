@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "MintMe Content Filter",
+    "version": "1.1",
+    "description": "Hide content from specific users and tokens on mintme.com",
+    "permissions": [
+      "storage"
+    ],
+    "host_permissions": [
+      "*://*.mintme.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.mintme.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }
